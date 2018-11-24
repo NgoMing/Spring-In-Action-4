@@ -2,6 +2,7 @@ group 'com.minhnln'
 version '1.0'
 
 apply plugin: 'java'
+apply plugin: 'war'
 
 sourceCompatibility = 1.8
 
@@ -11,6 +12,9 @@ repositories {
 
 dependencies {
     compile "org.springframework:spring-webmvc:$springVersion"
+
+    compile "javax.servlet:jstl:$jstlVersion"
+    providedCompile "javax.servlet.jsp:jsp-api:$jspApiVersion"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

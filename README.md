@@ -22,6 +22,12 @@ Based on Spring in Action 4
 6. View implementation is the next stop
 7. Response object
 
+##### Spittr application
+* Simple Micro-blogging application 
+* Two essential domain concepts:
+  - Spitters: the users of the application
+  - Spittles: the brief status updates that users publish
+
 
 ### Take note about Core Spring
 * A framework - provide a standard way to build and deploy application
@@ -92,6 +98,7 @@ Based on Spring in Action 4
   - @Primary: default bean
   - @Qualifier(string)
   - @Component(name): declare a Component (a type of Bean)
+  - @Controller: declare a Controller (based on @Component)
   - @Configuration: configuration class
   - @ComponentScan(basePackages = {strings or classes}): scan the same package
   - @Autowired: 
