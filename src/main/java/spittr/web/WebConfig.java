@@ -1,9 +1,39 @@
 package spittr.web;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-public class WebConfig {
+@ComponentScan("spittr.web")
+public class WebConfig extends WebMvcConfigurerAdapter {
+
+    // Configure view resolver
+    @Bean
+    public ViewResolver viewResolver() {
+
+        InternalResourceViewResolver resolver =
+                new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+        resolver.setExposeContextBeansAsAttributes(true);
+        return resolver;
+    }
+
+    // Configure static content handling
+    @Override
+    public void configureDefaultServletHandling(
+            DefaultServletHandlerConfigurer configurer) {
+
+        // DispatcherServlet forwards requests for static resources
+        //   to the servlet's default servlet and
+        //   not try to handle them itself
+        configurer.enable();
+    }
 }
