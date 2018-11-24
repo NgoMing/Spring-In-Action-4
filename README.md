@@ -28,6 +28,17 @@ Based on Spring in Action 4
   - Spitters: the users of the application
   - Spittles: the brief status updates that users publish
 
+### Configure Tomcat:
+Follows the guide in the link: https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html
+* Download Apache Tomcat
+* Define a server (Tomcat in the case) in the Settings dialog 
+* Click on box on the left of run icon
+* Choose Edit Configurations...
+* Click "+" button to add new configuration
+* Choose Tomcat, local
+* Switch to Deployment tab, add "exploded" version
+* Change name to Tomcat and then press OK to apply configuration
+* Press Run and open localhost:8080 to access the application
 
 ### Take note about Core Spring
 * A framework - provide a standard way to build and deploy application
