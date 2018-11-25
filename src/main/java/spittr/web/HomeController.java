@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/")    // Map controller to "/"
+//@RequestMapping({"/", "/homepage"})    // Map controller to "/" and "/homepage"
 public class HomeController {
 
     // Handle Get request, return name of view that will be rendered
