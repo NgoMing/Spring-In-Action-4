@@ -1,13 +1,22 @@
 package spittr;
 
+import com.sun.istack.internal.NotNull;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+
+import javax.validation.constraints.Size;
 
 public class Spitter {
 
     private Long id;
+
+    @NotNull
+    @Size(min=5, max=16)
     private String username;
+
     private String password;
+
+    @NotNull
     private String firstName;
     private String lastName;
     private String email;
