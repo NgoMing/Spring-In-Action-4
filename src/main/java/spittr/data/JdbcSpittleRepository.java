@@ -19,12 +19,13 @@ public class JdbcSpittleRepository implements SpittleRepository {
     }
 
     @Override
-    public List<Spittle> findRecentSpittles() {
+    public List<Spittle> findRecentSpittles(int count) {
         return jdbc.query(
                 "select id, message, time, latitude, longitude" +
                     " from Spittle" +
-                    " order by time desc limit 20",
-                new SpittleRowMapper()
+                    " order by time desc limit ?",
+                new SpittleRowMapper(),
+                count
         );
     }
 
@@ -34,9 +35,10 @@ public class JdbcSpittleRepository implements SpittleRepository {
                 "select id, message, time, latitude, longitude" +
                         " from Spittle" +
                         " where id < ?" +
-                        " order by time desc limit 20",
+                        " order by time desc limit ?",
                 new SpittleRowMapper(),
-                max
+                max,
+                count
         );
     }
 

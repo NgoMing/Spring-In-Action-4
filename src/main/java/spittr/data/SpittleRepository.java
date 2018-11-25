@@ -8,9 +8,10 @@ public interface SpittleRepository {
 
     /**
      * List spittles that are most recently active
+     * @param count the number of spittles that should be returned
      * @return a list of spittles
      */
-    List<Spittle> findRecentSpittles();
+    List<Spittle> findRecentSpittles(int count);
 
     /**
      * List a number of spittles that have is less than max
