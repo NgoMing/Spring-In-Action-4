@@ -6,4 +6,4 @@ create table Spittle (
   longitude double
 );
 
-insert into Spittle(message, time, latitude, longitude) values ('Hello world', '2013-09-02', 0.0, 0.0);
+insert into Spittle values (1, 'Hello world', '2013-09-02', 0.0, 0.0);
