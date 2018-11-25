@@ -5,10 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/")    // Map controller to "/"
 public class HomeController {
 
-    // Handle Get request for "/", return name of view that will be rendered
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    // Handle Get request, return name of view that will be rendered
+    @RequestMapping(method = RequestMethod.GET)
     public String home() {
         return "home";
     }
