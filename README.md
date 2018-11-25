@@ -27,6 +27,11 @@ Based on Spring in Action 4
 * Two essential domain concepts:
   - Spitters: the users of the application
   - Spittles: the brief status updates that users publish
+  
+##### Pass data into a controller's handler method
+* Query parameters
+* Form parameters
+* Path parameters
 
 ### Configure Tomcat:
 Follows the guide in the link: https://www.jetbrains.com/help/idea/configuring-and-managing-application-server-integration.html

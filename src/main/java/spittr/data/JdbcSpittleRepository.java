@@ -3,12 +3,14 @@ package spittr.data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 import spittr.Spittle;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class JdbcSpittleRepository implements SpittleRepository {
 
     private JdbcOperations jdbc;
@@ -70,7 +72,7 @@ public class JdbcSpittleRepository implements SpittleRepository {
             return new Spittle(
                     rs.getLong("id"),
                     rs.getString("message"),
-                    rs.getDate("created_at"),
+                    rs.getDate("time"),
                     rs.getDouble("longitude"),
                     rs.getDouble("latitude"));
         }
