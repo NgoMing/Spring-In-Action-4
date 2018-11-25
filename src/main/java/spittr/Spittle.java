@@ -28,8 +28,8 @@ public class Spittle {
      * @param longitude longitude of the position where the spittle was posted
      */
     public Spittle(
-            String message, Date time, Double latitude, Double longitude) {
-        this.id = null;
+            Long id, String message, Date time, Double latitude, Double longitude) {
+        this.id = id;
         this.message = message;
         this.time = time;
         this.latitude = latitude;
@@ -42,7 +42,7 @@ public class Spittle {
      * @param time time then the spittle was posted
      */
     public Spittle(String message, Date time) {
-        this(message, time, null, null);
+        this(null, message, time, null, null);
     }
 
     /**
